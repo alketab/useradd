@@ -1,0 +1,22 @@
+#Connect with the server in putty terminal
+#Make yourself a root 
+sudo su
+useradd "user name"
+cat /etc/passwd
+cd /etc/sudoers.d/
+usermod -aG vagrant "user"
+#login with the user you just created 
+su "user"
+cd home/user
+ll -a 
+#Create a new directory
+mkdir .ssh
+chmod 700 .ssh
+cd .ssh
+touch authorized_keys
+chmod 600 authorized_keys
+#Generate the keys using:
+ssh-keygen -t rsa 
+#Copy and paste the public key to authorized_keys
+vi authorized_keys 
+#Convert the private key in putty format by using puttygen
